@@ -1,0 +1,17 @@
+.content {
+    min-height: 100vh; 
+    padding: 20px;
+  }
+  
+
+  .footer {
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: #f1f1f1;  /* Optional: Adjust the footer's background */
+  }
+  
+  
+  .spacer {
+    flex: 1 1 auto;
+  }

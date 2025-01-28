@@ -1,0 +1,16 @@
+
+
+mat-dialog-actions {
+  position: relative; 
+}
+
+.mat-button {
+    position: absolute;
+    right: 0;
+    margin: 5px;
+}
+
+mat-dialog-content {
+
+    margin: 40px;
+}
