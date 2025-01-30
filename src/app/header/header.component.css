@@ -30,6 +30,12 @@
   background-color: #f8f2f2;
 }
 
+.menu-btn.active {
+  font-weight: bold;
+  background-color: white;
+  color: black; /* Underline for active menu */
+}
+
 .menu-btn:hover{
   background-color: white;
   color: black;

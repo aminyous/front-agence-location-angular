@@ -12,20 +12,15 @@ import { ResidenceService } from '../services/residence.service';
 })
 export class ResidencesComponent implements OnInit {
 
-  displayColumns = ['id', 'name', 'image', 'status', 'action'];
-  isLike: boolean = true;
-  isVisible: boolean = false;
-  isDisabled: boolean = true;
   adresse: string = '';
-  whishlist: Residence[] = this.residenceService.getWishlist();
-  
-  listResidences: Residence[] = this.residenceService.getResidencesList();
- 
-
+  whishlist: Residence[] = [];
   list: Residence[] = [];
+
+  displayColumns = ['id', 'name', 'image', 'status', 'action'];
   dataSource = new MatTableDataSource(this.list);
-  readonly dialog = inject(MatDialog);
   
+  readonly dialog = inject(MatDialog);
+
   constructor(private residenceService: ResidenceService){}
 
   
@@ -34,14 +29,13 @@ export class ResidencesComponent implements OnInit {
       this.list = updatedList;
       this.dataSource = new MatTableDataSource(this.list);
     })
+
+    this.residenceService.myWishlist$.subscribe(updatedWishlist => {
+      this.whishlist = updatedWishlist;
+    })
   }
 
   
-  
-
-
-  
-
 
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -67,14 +61,12 @@ export class ResidencesComponent implements OnInit {
 
     if (!exists) {
       residence.favorite = true;
-      this.isLike = residence.favorite;
       residence.likeBtn = "Dislike";
-      this.residenceService.setWishlist(residence);
+      this.residenceService.updateWishlist(residence);
     } else{
       residence.favorite = false;
-      this.isLike = residence.favorite;
       residence.likeBtn = "Like";
-      this.residenceService.setWishlist(residence);
+      this.residenceService.updateWishlist(residence);
       
     }
   

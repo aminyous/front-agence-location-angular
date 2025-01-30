@@ -9,12 +9,12 @@
   <span class="app-title">Agence de Location </span>
   <span class="header-spacer"></span>
   <mat-divider class="vertical-divider" vertical></mat-divider>
-  <button class="menu-btn" mat-button routerLink="/">Home</button>
+  <button class="menu-btn" mat-button  routerLink="/">Home</button>
   <mat-divider class="vertical-divider" vertical></mat-divider>
-  <button class="menu-btn" mat-button routerLink="/residences">Residences</button>
+  <button class="menu-btn" mat-button [routerLinkActive]="['active']" routerLink="/residences">Residences</button>
   <mat-divider class="vertical-divider" vertical></mat-divider>
-  <button class="menu-btn" mat-button routerLink="/apartments">Apartments</button>
+  <button class="menu-btn" mat-button [routerLinkActive]="['active']" routerLink="/apartments">Apartments</button>
   <mat-divider class="vertical-divider" vertical></mat-divider>
   
-  <button class="menu-btn" mat-button routerLink="/apartments">Favoris</button>
+  <button class="menu-btn" mat-button [routerLinkActive]="['active']" routerLink="/favoris">Favoris</button>
 </mat-toolbar>

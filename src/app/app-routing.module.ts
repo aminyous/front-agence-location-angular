@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ResidenceDetailsComponent } from './residences/residence-details/residence-details.component';
 import { ApartmentsComponent } from './apartments/apartments/apartments.component';
 import { ApartmentsByResidenceComponent } from './apartments/apartments-by-residence/apartments-by-residence.component';
+import { FavorisComponent } from './favoris/favoris.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'residence/:id', component: ResidenceDetailsComponent },
   { path: 'residence/:id/apartments', component: ApartmentsByResidenceComponent },
   { path: 'apartments', component: ApartmentsComponent },
+  { path: 'favoris', component: FavorisComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

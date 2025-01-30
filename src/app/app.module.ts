@@ -29,6 +29,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './utils/modal/modal.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { FavorisComponent } from './favoris/favoris.component';
 
 
 
@@ -47,7 +48,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ApartmentsByResidenceComponent,
     AddApartmentComponent,
     FormAppartmentComponent,
-    ModalComponent
+    ModalComponent,
+    FavorisComponent
   ],
   imports: [
     BrowserModule,
